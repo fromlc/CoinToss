@@ -7,11 +7,6 @@
 #include <string>
 #include <vector>
 
-// app
-using std::cin;
-using std::cout;
-
-// class
 using std::rand;
 using std::string;
 using std::vector;
@@ -23,7 +18,7 @@ constexpr int HEADS = 0;
 constexpr int TAILS = 1;
 
 //----------------------------------------------------------------------
-// entry point
+// Coin
 //----------------------------------------------------------------------
 class Coin {
 private:
@@ -33,7 +28,7 @@ private:
 
 public:
     //------------------------------------------------------------------
-    // default constructor : sets initial coin state
+    // default constructor : sets initial Coin state
     //------------------------------------------------------------------
     Coin() {
         toss();
