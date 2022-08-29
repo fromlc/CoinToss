@@ -3,11 +3,9 @@
 //----------------------------------------------------------------------
 #pragma once
 
-#include <cstdlib>      // rand()
 #include <string>
 #include <vector>
 
-using std::rand;
 using std::string;
 using std::vector;
 
@@ -27,45 +25,15 @@ private:
     vector<string> tossHistory;
 
 public:
-    //------------------------------------------------------------------
-    // default constructor : sets initial Coin state
-    //------------------------------------------------------------------
-    Coin() {
-        toss();
-
-        // don't count initial coin state as a toss
-        headsCount = tailsCount = 0;
-    }
-
-    //------------------------------------------------------------------
-    // - simulate coin toss with random 0 (HEADS) or 1 (TAILS)
-    // - set current toss result in sideUp member
-    // - track toss result in vector member
-    //------------------------------------------------------------------
-    void toss() {
-        if (rand() % 2 == HEADS) {
-            sideUp = "heads";
-            headsCount++;
-        }
-        else {
-            sideUp = "tails";
-            tailsCount++;
-        }
-    }
-
-    //------------------------------------------------------------------
+    // default constructor
+    Coin();
+    // simulate coin toss with random 0 (HEADS) or 1 (TAILS)
+    void toss();
     // return last toss results
-    //------------------------------------------------------------------
-    string getSideUp() { return sideUp; }
-
-    //------------------------------------------------------------------
+    string getSideUp();
     // return number of heads tossed
-    //------------------------------------------------------------------
-    int getHeadsCount() { return headsCount; }
-
-    //------------------------------------------------------------------
+    int getHeadsCount();
     // return number of tails tossed
-    //------------------------------------------------------------------
-    int getTailsCount() { return tailsCount; }
+    int getTailsCount();
 };
 
