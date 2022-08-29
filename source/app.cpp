@@ -1,9 +1,11 @@
 //----------------------------------------------------------------------
 // app.cpp : Coin toss game
+// 
+// Author: Prof. Linda C
 //----------------------------------------------------------------------
 #include <iostream>
 
-// Coin class declaration and definition
+// Coin class declaration
 #include "Coin.h"
 
 using std::cin;
@@ -33,7 +35,7 @@ int main() {
     cout << "\nNumber of heads tossed: " << suzyBuck.getHeadsCount();
     cout << "\nNumber of tails tossed: " << suzyBuck.getTailsCount();
 
-    cout << "\n\nGoodbye!\n";
+    cout << "\n\nGoodbye\n";
 
     return 0;
 }
