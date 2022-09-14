@@ -8,6 +8,9 @@
 #include <string>
 #include <vector>
 
+// uncomment to disable assert()
+//#define NDEBUG
+
 using std::rand;
 using std::string;
 using std::vector;
@@ -32,7 +35,7 @@ public:
     // default constructor : sets initial Coin state
     //------------------------------------------------------------------
     Coin() {
-        toss();
+        _toss();
 
         // don't count initial coin state as a toss
         headsCount = tailsCount = 0;
@@ -44,14 +47,8 @@ public:
     // - track toss result in vector member
     //------------------------------------------------------------------
     void toss() {
-        if (rand() % 2 == HEADS) {
-            sideUp = "heads";
-            headsCount++;
-        }
-        else {
-            sideUp = "tails";
-            tailsCount++;
-        }
+        _toss();
+
         // track toss results in vector
         tossHistory.push_back(sideUp);
     }
@@ -79,5 +76,22 @@ public:
         assert(tossNumber < tossHistory.size());
 
         return tossHistory.at(tossNumber - 1); }
+
+private:
+    //------------------------------------------------------------------
+    // - private coin toss only
+    //------------------------------------------------------------------
+    void _toss() {
+        if (rand() % 2 == HEADS) {
+            sideUp = "heads";
+            headsCount++;
+        }
+        else {
+            sideUp = "tails";
+            tailsCount++;
+        }
+    }
+
+
 };
 
