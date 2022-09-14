@@ -72,7 +72,7 @@ public:
     int getTailsCount() { return tailsCount; }
 
     //------------------------------------------------------------------
-    // return result number of tails tossed
+    // return result for a specific toss number
     //------------------------------------------------------------------
     string getTossResult(int tossNumber) { 
         assert(tossNumber > 0);
