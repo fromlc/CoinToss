@@ -23,6 +23,9 @@ private:
     string sideUp;
     int headsCount, tailsCount;
     vector<string> tossHistory;
+    
+    // private coin toss only
+    void _toss();
 
 public:
     // default constructor

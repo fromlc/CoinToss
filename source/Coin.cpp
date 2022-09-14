@@ -24,7 +24,7 @@ using std::vector;
 Coin::Coin() {
     srand((unsigned int) time(0));
 
-    toss();
+    _toss();
 
     // don't count initial coin state as a toss
     headsCount = tailsCount = 0;
@@ -33,9 +33,18 @@ Coin::Coin() {
 //----------------------------------------------------------------------
 // - simulate coin toss with random 0 (HEADS) or 1 (TAILS)
 // - set current toss result in sideUp member
-// - track toss result in vector member
+// - track toss results in vector
 //----------------------------------------------------------------------
 void Coin::toss() {
+    _toss();
+
+    tossHistory.push_back(sideUp);
+}
+
+//----------------------------------------------------------------------
+// private coin toss only
+//----------------------------------------------------------------------
+void Coin::_toss() {
     if (rand() % 2 == HEADS) {
         sideUp = "heads";
         headsCount++;
@@ -44,8 +53,6 @@ void Coin::toss() {
         sideUp = "tails";
         tailsCount++;
     }
-
-    tossHistory.push_back(sideUp);
 }
 
 //----------------------------------------------------------------------
