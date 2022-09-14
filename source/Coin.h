@@ -3,6 +3,7 @@
 //----------------------------------------------------------------------
 #pragma once
 
+#include <cassert>
 #include <cstdlib>      // rand()
 #include <string>
 #include <vector>
@@ -51,6 +52,8 @@ public:
             sideUp = "tails";
             tailsCount++;
         }
+        // track toss results in vector
+        tossHistory.push_back(sideUp);
     }
 
     //------------------------------------------------------------------
@@ -67,5 +70,14 @@ public:
     // return number of tails tossed
     //------------------------------------------------------------------
     int getTailsCount() { return tailsCount; }
+
+    //------------------------------------------------------------------
+    // return result number of tails tossed
+    //------------------------------------------------------------------
+    string getTossResult(int tossNumber) { 
+        assert(tossNumber > 0);
+        assert(tossNumber < tossHistory.size());
+
+        return tossHistory.at(tossNumber - 1); }
 };
 

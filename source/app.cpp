@@ -33,6 +33,9 @@ int main() {
     cout << "\nNumber of heads tossed: " << suzyBuck.getHeadsCount();
     cout << "\nNumber of tails tossed: " << suzyBuck.getTailsCount();
 
+    // use the history vector
+    cout << "\n\nFirst toss was: " << suzyBuck.getTossResult(1);
+
     cout << "\n\nGoodbye!\n";
 
     return 0;
