@@ -35,6 +35,8 @@ public:
     // default constructor : sets initial Coin state
     //------------------------------------------------------------------
     Coin() {
+        srand((unsigned int) time(0));  // time_t
+
         _toss();
 
         // don't count initial coin state as a toss
@@ -91,7 +93,5 @@ private:
             tailsCount++;
         }
     }
-
-
 };
 
