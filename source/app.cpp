@@ -3,6 +3,7 @@
 // 
 // Author: Prof. Linda C
 //----------------------------------------------------------------------
+#include <cassert>
 #include <iostream>
 
 // Coin class declaration
@@ -19,6 +20,7 @@ int main() {
     cout << "How many coin tosses? ";
     int tosses;
     cin >> tosses;
+    assert(tosses > 0);
 
     // display initial coin state
     Coin suzyBuck;
@@ -34,6 +36,9 @@ int main() {
     // display numbers of heads and tails tossed
     cout << "\nNumber of heads tossed: " << suzyBuck.getHeadsCount();
     cout << "\nNumber of tails tossed: " << suzyBuck.getTailsCount();
+    
+    // display result of a particular toss
+    cout << "\n\nResult of toss 1: " << suzyBuck.getTossResult(1);
 
     cout << "\n\nGoodbye\n";
 

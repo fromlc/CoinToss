@@ -35,5 +35,6 @@ public:
     int getHeadsCount();
     // return number of tails tossed
     int getTailsCount();
+    // return result for a specific toss number
+    string getTossResult(int tossNumber);
 };
-
