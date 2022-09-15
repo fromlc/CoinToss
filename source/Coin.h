@@ -75,7 +75,7 @@ public:
     //------------------------------------------------------------------
     string getTossResult(int tossNumber) { 
         assert(tossNumber > 0);
-        assert(tossNumber < tossHistory.size());
+        assert(tossNumber <= tossHistory.size());
 
         return tossHistory.at(tossNumber - 1); }
 
